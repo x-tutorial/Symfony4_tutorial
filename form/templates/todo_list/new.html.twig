@@ -1,0 +1,10 @@
+{# empty Twig template #}
+{%  extends "base.html.twig" %}
+
+{% block body %}
+    <h3>Bitte machen Sie ein Todo-Eintrag</h3>
+    
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
