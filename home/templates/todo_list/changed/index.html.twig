@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todo Liste{% endblock %}
+
+{% block body %}
+ <main role="main" class="container">
+
+      <div class="row">
+          <div class="col-md-12">
+              
+          <h3>Todo Liste:</h3>
+			<table class="table table-hover table-dark">
+			  <thead>
+				<tr>
+				  <th scope="col">Name</th>
+				  <th scope="col">Auftrag</th>
+				  <th scope="col">Datum</th>
+				  <th scope="col"></th>
+				</tr>
+			  </thead>   
+    <tbody>
+          {% for todo in todo_list %}
+            <tr>
+              <td>{{ todo.name }}</td>
+              <td>{{ todo.auftrag }}</td>
+              <td>{{ todo.datum|date('j F Y G:I') }}</td>
+              <td>
+                    <a href="{{ asset('/todo/neu') }}" class="btn btn-primary">Einfügen</a>
+                    <a href="#" class="btn btn-secondary">Bearbeiten</a>
+                    <a href="#" class="btn btn-danger">Löschen</a>
+              </td>
+            </tr>
+          {% endfor %}
+      </tbody>
+ </table>
+			
+			
+		</div>
+        
+      </div>
+
+    </main>
+{% endblock %}
